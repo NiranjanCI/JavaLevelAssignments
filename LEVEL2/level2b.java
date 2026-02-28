@@ -24,8 +24,7 @@ class level2b {
 
         areaSquareInch = 0.5 * baseInch * heightInch;
 
-        System.out.println("The Area of the triangle in sq in is "
-                + areaSquareInch + " and sq cm is " + areaSquareCm);
+        System.out.println("The Area of the triangle in sq in is " + areaSquareInch + " and sq cm is " + areaSquareCm);
 
         input.close();
     }

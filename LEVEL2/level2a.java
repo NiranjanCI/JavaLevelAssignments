@@ -21,10 +21,7 @@ class level2a {
         multiplication = number1 * number2;
         division = number1 / number2;
 
-        System.out.println("The addition, subtraction, multiplication, and division value of "
-                + number1 + " and " + number2 + " is "
-                + addition + ", " + subtraction + ", "
-                + multiplication + ", and " + division);
+        System.out.println("The addition, subtraction, multiplication, and division value of " + number1 + " and " + number2 + " is " + addition + ", " + subtraction + ", " + multiplication + ", and " + division);
 
         input.close();
     }
