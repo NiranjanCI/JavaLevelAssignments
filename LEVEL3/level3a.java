@@ -15,8 +15,7 @@ class level3a {
 
         fahrenheitResult = (celsius * 9 / 5) + 32;
 
-        System.out.println("The " + celsius +
-                " celsius is " + fahrenheitResult + " fahrenheit");
+        System.out.println("The " + celsius + " celsius is " + fahrenheitResult + " fahrenheit");
 
         input.close();
     }

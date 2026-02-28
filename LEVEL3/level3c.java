@@ -20,10 +20,7 @@ class level3c {
 
         simpleInterest = (principal * rate * time) / 100;
 
-        System.out.println("The Simple Interest is " + simpleInterest +
-                " for Principal " + principal +
-                ", Rate of interest" + rate +
-                " and Time " + time);
+        System.out.println("The Simple Interest is " + simpleInterest + " for Principal " + principal + ", Rate of interest" + rate + " and Time " + time);
 
         input.close();
     }

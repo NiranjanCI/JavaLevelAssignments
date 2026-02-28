@@ -19,8 +19,7 @@ class level3b {
         number1 = number2;
         number2 = temp;
 
-        System.out.println("The swapped numbers are "
-                + number1 + " and " + number2);
+        System.out.println("The swapped numbers are " + number1 + " and " + number2);
 
         input.close();
     }
