@@ -1,5 +1,11 @@
-# JavaLevelAssignments
-Name: Niranjan CI
-Reg. No.: RA2511003010221
-Section: D1
-Branch & Dept.: B.Tech - Cse Core
+# STEP Java Assignments
+
+Weekly 3-4 STEP practice programs.
+
+## Structure
+
+LEVEL1 – Basic condition and loops  
+LEVEL2 – Loop problems and number logic  
+LEVEL3 – Advanced logic problems
+
+Each file contains a standalone Java program.
