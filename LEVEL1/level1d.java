@@ -1,34 +1,40 @@
-/**
- * Level 1 D
- * To check if a number is natural number and find the sum of n natural numbers
- */
-
 import java.util.Scanner;
 
 class level1d {
     public static void main(String[] args) {
-        // Create a Scanner object to read input from the user
+
         Scanner input = new Scanner(System.in);
 
-        // Declare variables
-        int number, sumOfNaturalNumbers;
+        double[] numbers = new double[10];
+        double total = 0.0;
 
-        // Prompt the user to enter a number
-        System.out.print("Enter a number: ");
-        number = input.nextInt();
+        int index = 0;
 
-        // Boolean condition to check if the number is a natural number
-        boolean isNaturalNumber = number > 0;
+        System.out.println("Enter numbers (0 or negative to stop):");
 
-        // Condition block
-        if (isNaturalNumber) {
-            sumOfNaturalNumbers = (number * (number +1) / 2);
-            System.out.println("The sum of " + number + " natural number is " + sumOfNaturalNumbers);
-        } else {
-            System.out.println("The number " + number + " is not a natural number.");
+        while (true) {
+
+            double value = input.nextDouble();
+
+            if (value <= 0) {
+                break;
+            }
+
+            if (index == numbers.length) {
+                break;
+            }
+
+            numbers[index] = value;
+            index++;
         }
 
-        // Close the Scanner object
+        // Calculate sum
+        for (int i = 0; i < index; i++) {
+            total += numbers[i];
+        }
+
+        System.out.println("Total = " + total);
+
         input.close();
     }
 }

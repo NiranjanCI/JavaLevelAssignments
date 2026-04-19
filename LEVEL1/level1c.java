@@ -1,33 +1,25 @@
-/**
- * Level 1 C
- * To check if a person is elligible to vote or not
- */
-
 import java.util.Scanner;
 
 class level1c {
     public static void main(String[] args) {
-        // Create a Scanner object to read input from the user
+
         Scanner input = new Scanner(System.in);
 
-        // Declare a variable to store the age of the person
-        int age;
+        System.out.print("Enter a number: ");
+        int number = input.nextInt();
 
-        // Prompt the user to enter their age
-        System.out.print("Enter your age: ");
-        age = input.nextInt();
+        int[] table = new int[10];
 
-        // Boolean variable to check if the person is eligible to vote
-        boolean isEligibleToVote = age >= 18;
-
-        // Conditional statement to check if the person is eligible to vote
-        if (isEligibleToVote) {
-            System.out.println("This person age is " + age + " and can vote.");
-        } else {
-            System.out.println("This person age is " + age + " and cannot vote.");
+        // Store multiplication results
+        for (int i = 0; i < table.length; i++) {
+            table[i] = number * (i + 1);
         }
 
-        // Close the Scanner object
+        // Display results
+        for (int i = 0; i < table.length; i++) {
+            System.out.println(number + " * " + (i + 1) + " = " + table[i]);
+        }
+
         input.close();
     }
 }

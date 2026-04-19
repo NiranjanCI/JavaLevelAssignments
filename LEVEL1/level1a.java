@@ -1,29 +1,34 @@
-/** 
- * Level1A
- * Checks whether a given number is divisible by 5
-*/  
-
 import java.util.Scanner;
 
 class level1a {
     public static void main(String[] args) {
-        // Create a Scanner object to read input from the user
+
         Scanner input = new Scanner(System.in);
 
-        // Declare a variable to store the user input
-        int number;
+        int[] ages = new int[10];
 
-        // Prompt the user to enter a number
-        System.out.print("Enter a number: ");
-        number = input.nextInt();
+        // Input ages
+        System.out.println("Enter ages of 10 students:");
 
-        // Boolean variable to check if the number is divisible by 5
-        boolean isDivisibleBy5 = (number % 5 == 0);
+        for (int i = 0; i < ages.length; i++) {
+            ages[i] = input.nextInt();
 
-        // Display the result
-        System.out.println("Is the number" + number + " divisible by 5? " + isDivisibleBy5);
+            // Validate
+            if (ages[i] < 0) {
+                System.err.println("Invalid age entered.");
+                System.exit(0);
+            }
+        }
 
-        // Close the Scanner object
+        // Check voting eligibility
+        for (int i = 0; i < ages.length; i++) {
+            if (ages[i] >= 18) {
+                System.out.println("Age " + ages[i] + " can vote.");
+            } else {
+                System.out.println("Age " + ages[i] + " cannot vote.");
+            }
+        }
+
         input.close();
     }
 }

@@ -1,35 +1,43 @@
-/**
- * Level 1b
- * Checks whether the first number is the smallest of the three numbers.
- */
-
 import java.util.Scanner;
 
 class level1b {
     public static void main(String[] args) {
-        // Create scanner object to read input
+
         Scanner input = new Scanner(System.in);
 
-        // Declare variables to hold the three numbers
-        int number1, number2, number3;
+        int[] numbers = new int[5];
 
-        // Prompt the user to enter three numbers
-        System.out.print("Enter first number: ");
-        number1 = input.nextInt();  
+        System.out.println("Enter 5 numbers:");
 
-        System.out.print("Enter second number: ");
-        number2 = input.nextInt();
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = input.nextInt();
+        }
 
-        System.out.print("Enter third number: ");
-        number3 = input.nextInt();
+        // Analyze numbers
+        for (int i = 0; i < numbers.length; i++) {
 
-        // Boolean condition to check if the first number is the smallest
-        boolean isFirstSmallest = (number1 < number2) && (number1 < number3);
+            if (numbers[i] > 0) {
+                if (numbers[i] % 2 == 0) {
+                    System.out.println(numbers[i] + " is Positive Even");
+                } else {
+                    System.out.println(numbers[i] + " is Positive Odd");
+                }
+            } else if (numbers[i] < 0) {
+                System.out.println(numbers[i] + " is Negative");
+            } else {
+                System.out.println(numbers[i] + " is Zero");
+            }
+        }
 
-        // Display the result
-        System.out.println("Is the first number the smallest? " + isFirstSmallest);
+        // Compare first and last
+        if (numbers[0] > numbers[4]) {
+            System.out.println("First is greater than last");
+        } else if (numbers[0] < numbers[4]) {
+            System.out.println("First is less than last");
+        } else {
+            System.out.println("First and last are equal");
+        }
 
-        // Close the scanner
         input.close();
     }
 }

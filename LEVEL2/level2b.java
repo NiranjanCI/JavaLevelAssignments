@@ -1,27 +1,47 @@
-// Program to print multiplication table from 6 to 9
-
 import java.util.Scanner;
 
 class level2b {
     public static void main(String[] args) {
 
-        // Create Scanner object
         Scanner input = new Scanner(System.in);
 
-        // Take number input
         System.out.print("Enter a number: ");
         int number = input.nextInt();
 
-        // Loop from 6 to 9
-        for (int i = 6; i <= 9; i++) {
-
-            int result = number * i;
-
-            // Print multiplication
-            System.out.println(number + " * " + i + " = " + result);
+        // Validation
+        if (number < 0) {
+            System.err.println("Invalid number.");
+            System.exit(0);
         }
 
-        // Close scanner
+        int maxDigits = 10;
+        int[] digits = new int[maxDigits];
+        int index = 0;
+
+        // Extract digits
+        while (number != 0 && index < maxDigits) {
+            digits[index] = number % 10;
+            number /= 10;
+            index++;
+        }
+
+        int largest = 0;
+        int secondLargest = 0;
+
+        // Find largest and second largest
+        for (int i = 0; i < index; i++) {
+
+            if (digits[i] > largest) {
+                secondLargest = largest;
+                largest = digits[i];
+            } else if (digits[i] > secondLargest && digits[i] != largest) {
+                secondLargest = digits[i];
+            }
+        }
+
+        System.out.println("Largest Digit = " + largest);
+        System.out.println("Second Largest Digit = " + secondLargest);
+
         input.close();
     }
 }
