@@ -1,43 +1,36 @@
+// Program to find the maximum number of handshakes among students
+
 import java.util.Scanner;
 
 class level1b {
+    // Method to calculate the maximum number of handshakes using combination formula
+    public long calculateMaximumHandshakes(int numberOfStudents) {
+        // Formula: handshakes = n * (n - 1) / 2
+        long maximumHandshakes = (long) numberOfStudents * (numberOfStudents - 1) / 2;
+        return maximumHandshakes;
+    }
+
     public static void main(String[] args) {
-
-        Scanner input = new Scanner(System.in);
-
-        int[] numbers = new int[5];
-
-        System.out.println("Enter 5 numbers:");
-
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = input.nextInt();
-        }
-
-        // Analyze numbers
-        for (int i = 0; i < numbers.length; i++) {
-
-            if (numbers[i] > 0) {
-                if (numbers[i] % 2 == 0) {
-                    System.out.println(numbers[i] + " is Positive Even");
-                } else {
-                    System.out.println(numbers[i] + " is Positive Odd");
-                }
-            } else if (numbers[i] < 0) {
-                System.out.println(numbers[i] + " is Negative");
-            } else {
-                System.out.println(numbers[i] + " is Zero");
-            }
-        }
-
-        // Compare first and last
-        if (numbers[0] > numbers[4]) {
-            System.out.println("First is greater than last");
-        } else if (numbers[0] < numbers[4]) {
-            System.out.println("First is less than last");
-        } else {
-            System.out.println("First and last are equal");
-        }
-
-        input.close();
+        // Create Scanner object to take user input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Declare variable for number of students
+        int numberOfStudents;
+        
+        // Take user input for number of students
+        System.out.print("Enter the number of students: ");
+        numberOfStudents = scanner.nextInt();
+        
+        // Create object of level1b class
+        level1b handshakes = new level1b();
+        
+        // Calculate maximum handshakes
+        long maximumHandshakes = handshakes.calculateMaximumHandshakes(numberOfStudents);
+        
+        // Display the result
+        System.out.println("\nThe maximum number of possible handshakes among " + numberOfStudents + 
+                           " students is: " + maximumHandshakes);
+        
+        scanner.close();
     }
 }
